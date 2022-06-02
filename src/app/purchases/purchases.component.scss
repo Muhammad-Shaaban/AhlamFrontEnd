@@ -1,0 +1,72 @@
+.card {
+  width: 30%;
+  box-shadow: black;
+  border: none;
+  border-radius: 8px !important;
+  transition: 0.3s;
+  margin-left: 3%;
+}
+.card-number {
+  text-align: center;
+  font-size: 9vh;
+  padding: 3%;
+  font-weight: 400;
+  color: #ffc003;
+}
+.card-text {
+  text-align: center;
+  padding-top: 3%;
+  color: rgb(88, 86, 86);
+  font-size: 3vh;
+  font-weight: 400;
+}
+button {
+  color: #ffff !important;
+  font-size: 16px;
+  margin-bottom: 12px;
+
+  :hover {
+    color: #ffff !important;
+  }
+}
+.table{
+  margin-top: 15px;
+  background: #ffff;
+  border-radius: 80px;
+  text-align: center;
+  width: 70%;
+}
+table thead{
+  font-size: 17px;
+
+}
+mat-icon{
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 800px){
+  .card-container{
+    flex-direction: column !important;
+  }
+  .card {
+    width: 100%;
+    margin-top: 10%;
+    box-shadow: black;
+    border: none;
+    border-radius: 8px !important;
+    transition: 0.3s;
+  }
+  .btn-warning{
+    font-size: 15px;
+    /*width: 35%;*/
+  }
+  .table{
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 720px){
+  .btn-warning{
+    font-size: 11px;
+    /*width: 35%;*/
+  }
+}

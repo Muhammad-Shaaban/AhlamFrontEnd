@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="body">
+    <h2 class="text-center">تسجيل الدخول</h2>
+      <form #f="ngForm" (ngSubmit)="signedIn(f)">
+      <input ngModel name="Email" #Email="ngModel" class="form-control" type="email" placeholder="البريد الإلكتروني" required email="">
+      <div class="alert alert-danger" *ngIf="Email.invalid && Email.touched">البريد الإلكتروني مطلوب</div>
+      <input ngModel name="Password" #Password="ngModel" class="form-control" type="password" placeholder="كلمة المرور" required>
+      <div class="alert alert-danger" *ngIf="Password.invalid && Password.touched">كلمة المرور مطلوبة</div>
+      <button class="btn btn-warning" [disabled]="f.invalid" (cilick)="signedIn(f)"> تسجيل الدخول </button>
+    </form>
+
+  </div>
+</div>

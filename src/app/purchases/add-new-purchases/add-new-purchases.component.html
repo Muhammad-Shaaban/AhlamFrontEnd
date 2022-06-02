@@ -1,0 +1,13 @@
+<form #form="ngForm" class="mx-auto" style="width: 60%;margin-top: 5em;" (ngSubmit)="addNewPurchaes()">
+  <div class="form-group mb-5">
+    <label for="interpreter" class="fw-bold">عدد المفسرين</label>
+    <input id="interpreter" required class="form-control mt-3" type="text" name="NumberOfInterpreters" #NumberOfInterpreters="ngModel" [(ngModel)]="formData.NumberOfInterpreters">
+    <span class="text-danger" *ngIf="NumberOfInterpreters.invalid && NumberOfInterpreters.touched">عدد المفسرين مطلوب</span>
+  </div>
+  <div class="form-group mb-4">
+    <label for="Price" class="fw-bold">سعر الباقة</label>
+    <input id="Price" required class="form-control mt-3" type="text" name="Price" #Price="ngModel" [(ngModel)]="formData.Price">
+    <span class="text-danger" *ngIf="Price.invalid && Price.touched">سعر الباقة مطلوب</span>
+  </div>
+  <input type="submit" class="btn fw-bold text-white" style="background-color: #FFC003;" value="حفظ" [disabled]="form.invalid">
+</form>

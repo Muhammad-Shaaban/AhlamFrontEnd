@@ -1,0 +1,30 @@
+<div class=".table">
+  <table class="table table-bordered shadow p-3 mb-5 bg-white rounded">
+    <thead>
+      <tr>
+        <th>الرقم</th>
+        <th>رقم الهاتف</th>
+        <th>الحلم</th>
+        <th>السعر المدفوع</th>
+        <!--<th>إرسال إشعار</th>
+        <th colspan="2" style="text-align: center;">الإعدادات</th>-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of users| paginate: { itemsPerPage: 10, currentPage: p }; index as i">
+        <td class="col-md-1">{{ (10 * (p - 1) + i) + 1 }}</td>
+        <td class="col-md-1" style="direction: ltr;"><a href="https://api.whatsapp.com/send?phone={{ item.UserPhone | slice: 1: 13 }}" target="_blank"><mat-icon style="color: green">whatsapp</mat-icon></a></td>
+        <td class="col-md-3">{{item.DreamDescription}}</td>
+        <td class="col-md-2">{{item.DreamPrice}}</td>
+        <!--<td class="col-md-3"><a href="#">إرسال إشعار</a></td>
+        <td><mat-icon style="color: #63a104">edit</mat-icon></td>
+        <td><mat-icon style="color: red;">delete</mat-icon></td>-->
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-center">
+    <pagination-controls
+    previousLabel="السابق"
+    nextLabel="التالي"  (pageChange)="p = $event" class="col-md-10"></pagination-controls>
+  </div>
+</div>
