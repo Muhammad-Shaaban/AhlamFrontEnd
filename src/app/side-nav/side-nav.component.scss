@@ -1,0 +1,36 @@
+.mat-icon{
+  vertical-align: center;
+  margin-left: 1rem;
+}
+.mat-list-item{
+  color: #ffff !important;
+  height: 44px !important;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+  ::ng-deep{
+    .mat-list-item-content{
+      margin: 0 8px;
+
+    }
+  }
+}
+.list-item-active{
+  color: #ffc003 !important;
+  ::ng-deep{
+    .mat-list-item-content{
+      background-color: white !important;
+
+    }
+  }
+}
+.mat-subheader{
+  color: #ffff;
+  font-size: 2rem;
+  font-weight: 400;
+  justify-content: center;
+}
+.nav-title{
+  padding-bottom: 60px;
+  padding-top: 60px;
+  cursor: default;
+}

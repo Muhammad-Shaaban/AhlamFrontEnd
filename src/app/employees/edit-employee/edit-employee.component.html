@@ -1,0 +1,51 @@
+
+<div class="container">
+
+  <div class="modal-header" style="width: 60%;margin-left: 0 auto">
+      <h4 class="modal-title" id="modal-basic-title">تعديل موظف </h4>
+
+    </div>
+    <div class="modal-body" style="width: 60%;margin-left:0 auto">
+      <form #form="ngForm">
+        <input type="hidden" #id="ngModel" [(ngModel)]="formData.id" name="id">
+        <div class="form-group mb-4">
+          <label for="Name">اسم الموظف</label>
+          <input #Name="ngModel" [(ngModel)]="formData.Name" type="text" name="Name" class="form-control" required>
+        </div>
+        <div class="form-group mb-4">
+          <label for="username">اسم المستخدم</label>
+          <input #UserName="ngModel" [(ngModel)]="formData.UserName" type="text" name="UserName" class="form-control" required>
+        </div>
+        <div class="form-group mb-4">
+          <label for="email">البريد الإلكتروني</label>
+          <input #Email="ngModel" [(ngModel)]="formData.Email" type="email" name="Email" class="form-control" style="direction: rtl;" required>
+        </div>
+        <div class="form-group mb-4">
+          <label for="PhoneNumber">رقم الهاتف</label>
+          <input #PhoneNumber="ngModel" [(ngModel)]="formData.PhoneNumber" type="text" name="PhoneNumber" class="form-control" required>
+        </div>
+        <div class="form-group mb-4">
+          <label for="password">كلمة المرور</label>
+          <input #Password="ngModel" [(ngModel)]="formData.Password" type="password" name="Password" class="form-control" required minlength="6">
+          <div class="alert alert-danger" *ngIf="Password.value != ''">Password is Required</div>
+        </div>
+        <div class="form-group mb-4">
+          <label for="coniformPassword">تأكيد كلمة المرور</label>
+          <input #passcon="ngModel" [(ngModel)]="formData.passcon"  type="password" name="passcon" class="form-control">
+          <div class="alert alert-danger" *ngIf="passcon.value != Password.value"> Passwords must be equal</div>
+        </div>
+        <div class="form-group mb-4">
+          <label for="type">الوظيفة</label>
+          <input #Type="ngModel" [(ngModel)]="formData.Type" type="text" name="Type" class="form-control" required>
+        </div>
+        <div class="modal-footer ">
+          <button class="btn btn-warning mx-auto" type="submit" [disabled]="!Email.value || !Name.value || !UserName.value || !PhoneNumber.value" (click)="updateEmployee()"> حفظ</button>
+        </div>
+       <!-- <div class="col-md-12">
+          <p *ngIf="isCreated" class="alert alert-success">تمت التعديل بنجاح</p>
+        </div>-->
+      </form>
+
+    </div>
+
+</div>

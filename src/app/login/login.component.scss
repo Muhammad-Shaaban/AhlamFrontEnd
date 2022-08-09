@@ -1,0 +1,27 @@
+.body{
+  width: 40%;
+  margin: auto;
+  margin-top: 8%;
+  padding: 5%;
+  background-color: #e9e9e8;
+  border-radius: 8px;
+}
+h2{
+  font-size: 28px;
+  color: black;
+}
+input{
+  direction: rtl !important;
+  margin-bottom: 5%;
+}
+.btn{
+  background-color: #ffc003;
+  width: 100%;
+  margin-top: 10%;
+
+
+}
+
+@media (max-width: 992px) {
+  .body{width: 100%;}
+}

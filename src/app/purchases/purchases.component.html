@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="d-flex card-container justify-content-start">
+    <div class="card  shadow p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h2 class="card-number">600$</h2>
+        <h2 class="card-text">مجموع المشتريات</h2>
+      </div>
+    </div>
+    <div class="card  shadow p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h2 class="card-number">300$</h2>
+        <h2 class="card-text">مجموع التحويلات</h2>
+      </div>
+    </div>
+
+  </div>
+
+<button (click)="addNewPurchaes()" class="btn fw-bold" style="background-color: #FFC003;">اضافة باقة جديدة</button>
+
+
+  <div class=".table">
+    <table class="table table-bordered shadow p-3 mb-5 bg-white rounded">
+      <thead>
+        <tr>
+          <th>رقم الباقة</th>
+          <th>عدد المفسرين</th>
+          <th>سعر الباقة</th>
+          <!-- <th>الأحلام قيد التفسير</th> -->
+          <!-- <th>عدد المشتريات</th> -->
+          <th colspan="2" style="text-align: center;">الإعدادات</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of service.purchases| paginate: { itemsPerPage: 10, currentPage: p }; index as i">
+          <td>{{ item?.id }}</td>
+          <td>{{item?.NumberOfInterpreters}}</td>
+          <td>{{item?.Price}}</td>
+          <!-- <td>{{item.inProgressDreamsNumber}}</td> -->
+          <!-- <td>{{item.purchasesNumber}}</td> -->
+          <td><mat-icon style="color: #63a104" (click)="updatePuarchese(item.id)">edit</mat-icon></td>
+          <td><mat-icon style="color: red;" (click)="deletePuarchese(item.id)">delete</mat-icon></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls
+      previousLabel="السابق"
+      nextLabel="التالي"  (pageChange)="p = $event" class="col-md-10"></pagination-controls>
+    </div>
+</div>
+
+

@@ -1,0 +1,38 @@
+.table{
+  margin-top: 15px;
+  background: #ffff;
+  border-radius: 80px;
+  text-align: center;
+}
+table thead{
+  font-size: 17px;
+}
+button {
+  color: #ffff !important;
+  font-size: 14px;
+  width: 15%;
+  border-radius: 8px;
+  :hover {
+    color: #ffff !important;
+  }
+}
+mat-icon{
+  cursor: pointer;
+}
+@media only screen and (max-width: 800px){
+  .btn-warning{
+    font-size: 15px;
+    width: 35%;
+  }
+  .table{
+    width: 100%;
+  }
+
+}
+@media only screen and (max-width: 720px){
+  .btn-warning{
+    font-size: 11px;
+    width: 35%;
+  }
+}
+

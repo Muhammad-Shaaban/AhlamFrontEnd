@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="d-flex card-container justify-content-between">
+    <div class="card  shadow p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h5 class="card-title"><mat-icon inline="true">task</mat-icon></h5>
+        <h2 class="card-number">{{service.numberOfDoneDreams}}</h2>
+        <h2 class="card-text">عدد الأحلام المفسرة</h2>
+      </div>
+    </div>
+    <div class="card  shadow p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h5 class="card-title"><mat-icon inline="true">insert_drive_file</mat-icon></h5>
+        <h2 class="card-number">{{service.numberOfActiveDreams}}</h2>
+        <h2 class="card-text">عدد الأحلام غير المفسرة</h2>
+      </div>
+    </div>
+    <div class="card  shadow p-3 mb-5 bg-white rounded">
+      <div class="card-body">
+        <h5 class="card-title"><mat-icon inline="true">shopping_cart</mat-icon></h5>
+        <h2 class="card-number">{{service.PurchasesBalance | currency}}</h2>
+        <h2 class="card-text">رصيد المشتريات</h2>
+      </div>
+    </div>
+
+  </div>
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-warning" (click)="sendNotificationToAllUsers()">إرسال إشعار جماعي للمستخدمين</button>
+    <button class="btn btn-warning" (click)="sendNotificationToAllEmployees()">إرسال إشعار جماعي للموظفين</button>
+  </div>
+</div>
