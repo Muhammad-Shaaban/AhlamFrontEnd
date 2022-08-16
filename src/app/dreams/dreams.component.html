@@ -20,12 +20,14 @@
         <th>الرقم</th>
         <th>صاحب الحلم</th>
         <th>الحلم</th>
+        <th>وقت إنشاء الحلم</th>
         <th>وقت التفسير</th>
         <th>مدة التفسير</th>
         <th>حالة الحلم</th>
         <th>اسم المفسر</th>
         <th>رقم المفسر</th>
         <th>سعر الحلم</th>
+        <th></th>
         <!--<th>تاريخ التفسير</th>-->
 
 
@@ -36,6 +38,7 @@
         <td>{{ (10 * (p - 1) + i) + 1 }}</td>
         <td style="direction: ltr;"><a href="https://wa.me/{{ item.Creator }}" target="_blank">{{ item.Creator }}</a></td>
         <td>{{item.dream}}</td>
+        <td>{{ item.dreamCreationDate | date }}</td>
         <td>{{item.createtionDate | date}}</td>
         <td>{{ item.interpretationPeriod }}</td>
         <td *ngIf="item.Status == 'Under_Interpretation' || item.Status == 'Active'; else elseBlock">قيد التفسير</td>
@@ -46,6 +49,9 @@
         <td>{{ item.interpreterName }}</td>
         <td style="direction: ltr;"><a href="https://wa.me/{{ item.interpreterPhone }}" target="_blank">{{ item.interpreterPhone }}</a></td>
         <td>{{ item.dreamPrice}}</td>
+        <td>
+          <button class="btn text-danger" (click)="deleteSingleDream(item.DreamExplanatioId)"><mat-icon>delete</mat-icon></button>
+        </td>
 
         <!--<td>{{item.interpretationTime| date}}</td>
         <td>{{item.interpretationPeriod/60 | number:'1.0-0'}} ساعة</td>-->

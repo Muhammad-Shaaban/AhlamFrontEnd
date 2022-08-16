@@ -67,6 +67,6 @@ import { UpdatePurchaseComponent } from './purchases/update-purchase/update-purc
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  //https://api2.fsrhilmak.com
-  public static API_ENDPOINT = "https://api2.fsrhilmak.com";
+  /// https://api2.fsrhilmak.com
+  public static API_ENDPOINT = "http://localhost:63909";
 }

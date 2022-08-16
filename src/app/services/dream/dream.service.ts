@@ -8,8 +8,9 @@ import { Dream } from 'src/app/models/dream.model';
 })
 
 export class DreamService {
-  url = AppModule.API_ENDPOINT + "/api/controlPanel/GetDreamsList?interpretered="
-  deleteUrl =AppModule.API_ENDPOINT +  "/api/controlPanel/DeleteAllDreams"
+  url = AppModule.API_ENDPOINT + "/api/controlPanel/GetDreamsList?interpretered=";
+  deleteUrl =AppModule.API_ENDPOINT +  "/api/controlPanel/DeleteAllDreams";
+  deleteSingleDreamUrl =AppModule.API_ENDPOINT + "/api/controlPanel/DeleteSingleDream";
   constructor(private http: HttpClient) { }
   dreams: any[] = [];
 
@@ -17,11 +18,14 @@ export class DreamService {
     return  this.http.get<Dream[]>(this.url + dreamType).subscribe(
       (res: any) => {
         this.dreams = res;
-        console.log(this.dreams);
       });
   }
 
-    deleteAllDreams(){
-      return this.http.get(this.deleteUrl);
-    }
+  deleteAllDreams(){
+    return this.http.get(this.deleteUrl);
+  }
+
+  deleteSingleDream(id: number){
+    return this.http.post(this.deleteSingleDreamUrl, id);
+  }
 }
