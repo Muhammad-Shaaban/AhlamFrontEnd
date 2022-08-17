@@ -9,6 +9,7 @@ import { UsersComponent } from './users/users.component';
 import { EditEmployeeComponent } from './employees/edit-employee/edit-employee.component'
 import { AddNewPurchasesComponent } from './purchases/add-new-purchases/add-new-purchases.component';
 import { UpdatePurchaseComponent } from './purchases/update-purchase/update-purchase.component';
+import { AlldreamslistsComponent } from './alldreamslists/alldreamslists.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'employees', component: EmployeesComponent},
   {path: 'editEmployee/:id', component: EditEmployeeComponent},
   {path: 'dreams', component: DreamsComponent},
+  {path: 'allDreams', component: AlldreamslistsComponent},
   {path: 'users', component: UsersComponent},
   {path: 'purchases', component: PurchasesComponent},
   {path: 'addNewPurchase', component: AddNewPurchasesComponent, pathMatch: 'full'},

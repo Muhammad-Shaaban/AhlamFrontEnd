@@ -22,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EditEmployeeComponent } from './employees/edit-employee/edit-employee.component';
 import { AddNewPurchasesComponent } from './purchases/add-new-purchases/add-new-purchases.component';
-import { UpdatePurchaseComponent } from './purchases/update-purchase/update-purchase.component'
+import { UpdatePurchaseComponent } from './purchases/update-purchase/update-purchase.component';
+import { AlldreamslistsComponent } from './alldreamslists/alldreamslists.component'
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFirestoreModule } from 'angularfire2/firestore';
 // import { AngularFireAuthModule } from 'angularfire2/auth'
@@ -44,6 +45,7 @@ import { UpdatePurchaseComponent } from './purchases/update-purchase/update-purc
     EditEmployeeComponent,
     AddNewPurchasesComponent,
     UpdatePurchaseComponent,
+    AlldreamslistsComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,5 +70,6 @@ import { UpdatePurchaseComponent } from './purchases/update-purchase/update-purc
 })
 export class AppModule {
   /// https://api2.fsrhilmak.com
+  // http://localhost:63909
   public static API_ENDPOINT = "https://api2.fsrhilmak.com";
 }

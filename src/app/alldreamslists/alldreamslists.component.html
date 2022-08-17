@@ -1,0 +1,45 @@
+<div class="container">
+    <table class="table table-bordered shadow p-3 mb-5 bg-white rounded">
+      <thead>
+        <tr>
+          <th>الرقم</th>
+          <th>رقم صاحب الحلم</th>
+          <th>الحلم</th>
+          <th>وقت إنشاء الحلم</th>
+          <th>حالة الحلم</th>
+          <th></th>
+          <!--<th>تاريخ التفسير</th>-->
+  
+  
+        </tr>
+      </thead>
+      <tbody><!-- <mat-icon style="color: green">whatsapp</mat-icon> -->
+        <tr *ngFor="let item of service.allDreams| paginate: { itemsPerPage: 10, currentPage: p }; index as i">
+          <td>{{ (10 * (p - 1) + i) + 1 }}</td>
+          <td style="direction: ltr;"><a href="https://wa.me/{{ item.Phone }}" target="_blank">{{ item.Phone }}</a></td>
+          <td>{{item.Description}}</td>
+          <td>{{ item.DreamCreationDate | date }}</td>
+          <td *ngIf="item.Status == 'Under_Interpretation' || item.Status == 'Active'; else elseBlock">قيد التفسير</td>
+          <ng-template #elseBlock>
+           <td> تم التفسير</td>
+          </ng-template>
+  
+          <td>
+            <button class="btn text-danger" (click)="deleteSingleDream(item.DreamId)"><mat-icon>delete</mat-icon></button>
+          </td>
+  
+          <!--<td>{{item.interpretationTime| date}}</td>
+          <td>{{item.interpretationPeriod/60 | number:'1.0-0'}} ساعة</td>-->
+  
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+      <pagination-controls
+      previousLabel="السابق"
+      nextLabel="التالي"  (pageChange)="p = $event" class="col-md-10"></pagination-controls>
+    </div>
+  
+  </div>
+  
+  
